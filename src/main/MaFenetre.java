@@ -29,11 +29,43 @@ public class MaFenetre extends JFrame {
                 System.exit(0);
             }
         });
+        // Panneau principal
         JPanel panneau = new JPanel();
         panneau.add(button);
         panneau.add(buttonExit);
         setContentPane(panneau);
-        setSize(200,100);
+
+        //Barre de menu
+        JMenuBar barreMenu = new JMenuBar();
+        //Menus
+        JMenu menuFichier = new JMenu("Fichier");
+        JMenu menuEdition = new JMenu("Edition");
+        JMenu menuQuitter = new JMenu("Quitter");
+
+        // Sous menu Fichier
+        JMenuItem itemF1 = new JMenuItem("Quitter");
+        JMenuItem itemF2 = new JMenuItem("Sauvegarder");
+        JMenuItem itemF3 = new JMenuItem("Sauvegarder sous");
+        menuFichier.add(itemF1);
+        menuFichier.add(itemF2);
+        menuFichier.add(itemF3);
+
+        //Sous menu Edition
+        JMenuItem itemE1 = new JMenuItem("ED1");
+        JMenuItem itemE2 = new JMenuItem("ED2");
+
+        menuEdition.add(itemE1);
+        menuEdition.add(itemE2);
+
+
+
+
+        barreMenu.add(menuFichier);
+        barreMenu.add(menuEdition);
+        barreMenu.add(menuQuitter);
+        setJMenuBar(barreMenu);
+        // Configuration finale
+        setSize(200,200);
         pack();
         setVisible(true);
     }
